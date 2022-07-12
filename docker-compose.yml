@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  frontend:
+    container_name: frontend_app
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+    stdin_open: true
+
+## Ports is defined as:
+## Expose ports. Either specify both ports (HOST:CONTAINER), or just the container port (a random host port will be chosen).
+## https://stackoverflow.com/questions/40801772/what-is-the-difference-between-docker-compose-ports-vs-expose
+
+## tty and stdin_open are analogous to the -t and -i arguments for the docker run command, respectively.
+
+## You use stdin_open when you need to work on a project outside the Docker container.
+
+## You use tty when you need to work on a project inside the Docker container.
